@@ -9,6 +9,7 @@ import { ITSolutions } from './pages/ITSolutions';
 import { AITraining } from './pages/AITraining';
 import { Toaster } from './components/ui/sonner';
 import Preloader from './components/Preloader';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -48,6 +49,18 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  const pageVariants = {
+    initial: { opacity: 0, y: 20 },
+    in: { opacity: 1, y: 0 },
+    out: { opacity: 0, y: -20 }
+  };
+
+  const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    duration: 0.5
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
@@ -73,7 +86,18 @@ export default function App() {
       {loading && <Preloader />}
       <Header onNavigate={handleNavigate} currentPage={currentPage} />
       <main className="flex-grow">
-        {renderPage()}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+            transition={pageTransition}
+          >
+            {renderPage()}
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer onNavigate={handleNavigate} />
       <Toaster />
