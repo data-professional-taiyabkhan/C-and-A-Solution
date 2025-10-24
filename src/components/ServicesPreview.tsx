@@ -206,7 +206,7 @@ export function ServicesPreview({ onNavigate }: ServicesPreviewProps) {
             </p>
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-orange-600 hover:from-blue-700 hover:to-orange-700 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               Explore All Services
               <ArrowRight className="ml-2 h-5 w-5" />

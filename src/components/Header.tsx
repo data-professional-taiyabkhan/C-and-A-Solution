@@ -83,30 +83,25 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               About
             </motion.button>
             <motion.div className="relative group" whileHover={{ scale: 1.05 }}>
-              <button className="text-gray-700 hover:text-blue-600 transition-colors">
+              <button 
+                className="text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={() => scrollToSection('services')}
+              >
                 Services
               </button>
-              <motion.div 
-                className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: -10 }}
-                whileHover={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2 }}
-              >
+              <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="py-2">
                   {serviceItems.map((item, index) => (
-                    <motion.button
+                    <button
                       key={item.path}
                       onClick={() => onNavigate(item.path)}
                       className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
                     >
                       {item.name}
-                    </motion.button>
+                    </button>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
             <motion.button
               onClick={() => scrollToSection('contact')}
@@ -124,7 +119,7 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
           >
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="hidden md:inline-flex bg-orange-500 hover:bg-orange-600 text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Get in Touch
             </Button>
@@ -230,7 +225,7 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                 >
                   <Button 
                     onClick={() => scrollToSection('contact')}
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 w-full shadow-lg"
+                    className="bg-orange-500 hover:bg-orange-600 text-white w-full shadow-lg"
                   >
                     Get in Touch
                   </Button>

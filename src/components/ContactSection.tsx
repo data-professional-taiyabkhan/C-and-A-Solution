@@ -209,27 +209,12 @@ export function ContactSection() {
                   </div>
                   <div>
                     <p className="text-gray-900 mb-2 font-semibold">Email</p>
-                    <a href="mailto:info@candasolutions.co.uk" className="text-blue-600 hover:underline font-medium">
-                      info@candasolutions.co.uk
+                    <a href="mailto:candasolution@gmail.com" className="text-blue-600 hover:underline font-medium">
+                      candasolution@gmail.com
                     </a>
                   </div>
                 </motion.div>
                 
-                <motion.div 
-                  className="flex items-start gap-4 group"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="h-7 w-7 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-gray-900 mb-2 font-semibold">Phone</p>
-                    <a href="tel:+441234567890" className="text-blue-600 hover:underline font-medium">
-                      +44 123 456 7890
-                    </a>
-                  </div>
-                </motion.div>
               </div>
             </div>
 
