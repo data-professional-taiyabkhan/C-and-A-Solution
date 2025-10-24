@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 
 interface HeroProps {
   onGetInTouch: () => void;
+  onLearnMore?: () => void;
 }
 
-export function Hero({ onGetInTouch }: HeroProps) {
+export function Hero({ onGetInTouch, onLearnMore }: HeroProps) {
   const floatingVariants = {
     animate: {
       y: [-10, 10, -10],
@@ -125,7 +126,7 @@ export function Hero({ onGetInTouch }: HeroProps) {
                 <Button 
                   size="lg"
                   onClick={onGetInTouch}
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white group text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white group text-lg px-8 py-6 rounded-xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 min-h-[48px] touch-manipulation"
                 >
                   Get in Touch Now
                   <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
@@ -133,7 +134,8 @@ export function Hero({ onGetInTouch }: HeroProps) {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="border-2 border-blue-300 text-blue-100 hover:bg-blue-300 hover:text-blue-900 text-lg px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-300"
+                  onClick={onLearnMore}
+                  className="border-2 border-blue-300 text-blue-100 hover:bg-blue-300 hover:text-blue-900 text-lg px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-300 min-h-[48px] touch-manipulation"
                 >
                   Learn More
                 </Button>

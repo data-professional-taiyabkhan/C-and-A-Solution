@@ -171,7 +171,7 @@ export function ContactSection() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Button type="submit" className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] touch-manipulation">
                     <Send className="mr-2 h-5 w-5" />
                     Send Message
                   </Button>

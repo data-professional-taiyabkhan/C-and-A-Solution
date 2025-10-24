@@ -150,7 +150,7 @@ export function ServicePage({
               >
                 <Button
                   onClick={onGetInTouch}
-                  className="mt-8 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="mt-8 bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px] touch-manipulation"
                   size="lg"
                 >
                   Get Started Today

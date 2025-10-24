@@ -15,9 +15,16 @@ export function Home({ onNavigate }: HomeProps) {
     }
   };
 
+  const scrollToAbout = () => {
+    const element = document.getElementById('about');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
-      <Hero onGetInTouch={scrollToContact} />
+      <Hero onGetInTouch={scrollToContact} onLearnMore={scrollToAbout} />
       <About />
       <ServicesPreview onNavigate={onNavigate} />
       <ContactSection />
